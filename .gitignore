@@ -1,0 +1,19 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.idea
+
+*.iml
+
+
+logs
+
+.project
+.settings
+.classpath
+target
+target/classes/config.properties

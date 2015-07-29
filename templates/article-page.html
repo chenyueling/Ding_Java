@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <base href="${basePath}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" type="text/css" href="http://dingdong2.qiniudn.com/css/article.css?t=1420622280"/>
+    <link rel="stylesheet" type="text/css" href="http://dingdong2.qiniudn.com/css/alertme-320.css?t=1420622280" media="screen and (max-width: 340px)">
+    <link rel="stylesheet" type="text/css" href="http://dingdong2.qiniudn.com/css/alertme-360.css?t=1420622280" media="screen and (min-width: 341px) and (max-width: 360px)">
+    <link rel="stylesheet" type="text/css" href="http://dingdong2.qiniudn.com/css/alertme-360more.css?t=1420622280" media="screen and (min-width: 361px)">
+
+    <title>${title}</title>
+
+</head>
+<body>
+
+
+
+<div class="container ap">
+    <#if !auth>
+        <div class="download-warp">
+            <div class="text-warp">
+                <div class="left"><img class="icon" src="http://dingdong2.qiniudn.com/img/icon.png"/></div>
+                <div class="right">
+                    <span>叮&nbsp;咚, &nbsp;你&nbsp;的&nbsp;生&nbsp;活&nbsp;助&nbsp;手</span>
+                    <button class="download-btn" onclick="download()">立即下载</button>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </#if>
+    <div class="warp">
+
+        <h2>${title}</h2>
+        <span class="date">${publishDate}</span>
+        <p class="content">${content}</p>
+    </div>
+
+</div>
+
+
+<dic class="download-cover" id="download-cover" style="display: none">
+    <img src="http://dingdong2.qiniudn.com/img/re-open.png" style="width: 50%"/>
+</dic>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+
+
+    });
+
+    function download() {
+        if (!is_wechat()) {
+            window.location.href = "http://www.thering.cn/download.html";
+        } else {
+            document.getElementById("download-cover").style.display = "block";
+        }
+
+    }
+
+    $('.download-cover').click(function() {
+        $(this).hide();
+    });
+
+    $('.download-cover').bind('touchstart', function(event) {
+        $(this).hide();
+        event.preventDefault();
+    });
+
+    function is_wechat(){
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+</script>
+
+<!-- 熊掌统计 -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?9f43317766cb619043197eb72187132b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+
+    <title>${errorMsg}</title>
+
+    <style type="text/css">
+        html body{background: #ffffff;padding: 0;margin: 0;-webkit-tap-highlight-color:rgba(255,0,0,0);-webkit-tap-highlight-color: transparent;font-family:"Comic Sans MS","幼圆","黑体",sans-serif;}
+        .container{max-width: 970px;margin: 0 auto;overflow: hidden;}
+        .ep{text-align: center;}
+        .ep .error-img{margin-top: 50px;width: 50%;}
+        .ep span{color: #7b7b7b;}
+        .ep a{width: 120px;height: 40px;line-height: 40px;background: #ffffff;border: 1px solid #cccccc;border-radius: 5px;color: #7b7b7b;text-decoration: none;display: inline-block;margin-top: 20px;}
+        .ep a img{width: 14px;margin-right: 10px;}
+        .ep a:hover{background: #e9e9e9;}
+    </style>
+</head>
+<body>
+
+
+
+<div class="container ep">
+    <img class="error-img" src="http://dingdong2.qiniudn.com/img/wrong.png">
+    <br/>
+    <span>${errorMsg}</span>
+    <br/>
+    <a class="refresh" href="javascript:location.reload()"><img src="http://dingdong2.qiniudn.com/img/refresh.png"/> 刷新</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.jpush.alertme.factory.dao.ServiceDao">
+    <resultMap type="cn.jpush.alertme.factory.model.Service" id="ServiceResultMap">
+        <id column="id" property="id"/>
+        <result column="api_secret" property="apiSecret"/>
+        <result column="title" property="title"/>
+        <result column="data" property="dataStr"/>
+        <result column="tag" property="tag"/>
+    </resultMap>
+</mapper>

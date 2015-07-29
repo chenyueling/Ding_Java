@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.jpush.alertme.factory.dao.ClientServiceDao">
+    <resultMap type="cn.jpush.alertme.factory.model.ClientService" id="ClientServiceResultMap">
+        <id column="id" property="id"/>
+        <result column="data" property="dataStr"/>
+        <association property="service"
+                     resultMap="cn.jpush.alertme.factory.dao.ServiceDao.ServiceResultMap"
+                     columnPrefix="s_"/>
+    </resultMap>
+
+
+    <select id="findById" resultMap="ClientServiceResultMap">
+        select
+          c.id as id,
+          c.data as data,
+          s.id as s_id,
+          s.data as s_data,
+          s.api_secret as s_api_secret,
+          s.title as s_title,
+          s.tag as s_tag
+        from
+          tb_factory_client_service c,
+          tb_factory_service s
+        where
+          c.id = #{id}
+        and
+          c.sid = s.id
+    </select>
+
+    <select id="findBySid" resultMap="ClientServiceResultMap">
+        select
+          c.id as id,
+          c.data as data,
+          s.id as s_id,
+          s.data as s_data,
+          s.api_secret as s_api_secret,
+          s.title as s_title,
+          s.tag as s_tag
+        from
+          tb_factory_client_service c,
+          tb_factory_service s
+        where
+          c.sid = #{sid}
+        and
+          c.sid = s.id
+    </select>
+
+    <select id="findByTag" resultMap="ClientServiceResultMap">
+        select
+          c.id as id,
+          c.data as data,
+          s.id as s_id,
+          s.data as s_data,
+          s.api_secret as s_api_secret,
+          s.title as s_title,
+          s.tag as s_tag
+        from
+          tb_factory_client_service c,
+          tb_factory_service s
+        where
+          s.tag = #{tag}
+        and
+          c.sid = s.id
+    </select>
+
+</mapper>
